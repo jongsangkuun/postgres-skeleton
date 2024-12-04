@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    build: .  # 현재 디렉토리의 Dockerfile을 통해 빌드
+    volumes:
+      - ./db_data:/var/lib/postgresql/data  # 데이터베이스 데이터를 저장할 볼륨 마운트
+    ports:
+      - "5432:5432"  # 호스트와 컨테이너의 포트 매핑
+
+volumes:
+  db_data:  # 볼륨 설정, 데이터는 이 볼륨에 저장됩니다.
+
+
